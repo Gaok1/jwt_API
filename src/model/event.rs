@@ -16,7 +16,7 @@ pub struct Event{
 }
 
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, Serialize, Deserialize, Copy)]
 #[serde(rename_all = "lowercase")] // se quiser serializar em minúsculas
 pub enum EventType{
     Party,

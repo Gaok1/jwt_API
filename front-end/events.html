@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Eventos - Meu App Pika</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <h1>Meus Eventos</h1>
+  <button id="btnLogout">Sair</button>
+
+  <div>
+    <h2>Criar novo evento</h2>
+    <form id="createEventForm">
+      <label for="eventName">Nome:</label>
+      <input type="text" id="eventName" required />
+
+      <label for="eventDescription">Descrição:</label>
+      <input type="text" id="eventDescription" required />
+
+      <label for="eventType">Tipo:</label>
+      <select id="eventType">
+        <option value="Party">Party</option>
+        <option value="Meeting">Meeting</option>
+        <option value="Conference">Conference</option>
+        <option value="Obligation">Obligation</option>
+      </select>
+    
+
+      <label for="eventDate">Data (yyyy-mm-dd):</label>
+      <input type="text" id="eventDate" required />
+
+      <!-- user_id você pode definir ou pegar de algum lugar, depende do login -->
+      <button type="submit">Criar</button>
+    </form>
+  </div>
+
+  <hr />
+
+  <div>
+    <h2>Consultar/Atualizar Evento</h2>
+    <form id="consultEventForm">
+      <label for="consultName">Nome do Evento:</label>
+      <input type="text" id="consultName" required />
+
+      <label for="consultUserId">ID do Usuário:</label>
+      <input type="number" id="consultUserId" required />
+
+      <button type="submit">Consultar</button>
+    </form>
+  </div>
+
+  <div id="eventsList"></div>
+
+  <hr />
+
+  <div>
+    <h2>Deletar Evento</h2>
+    <form id="deleteEventForm">
+      <label for="deleteUserId">ID do Usuário:</label>
+      <input type="number" id="deleteUserId" required />
+
+      <label for="deleteEventId">ID do Evento:</label>
+      <input type="text" id="deleteEventId" required />
+
+      <button type="submit">Deletar</button>
+    </form>
+  </div>
+
+  <script src="js/events.js"></script>
+</body>
+</html>

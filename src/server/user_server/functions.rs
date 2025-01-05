@@ -17,7 +17,8 @@ pub fn add_routes(app:Router) -> Router {
 async fn register_handler(Json(payload): Json<RegisterRequest>) -> Result<Json<String>, (StatusCode, String)> {
     // Verifica se já existe usuário com esse username
     let mut db = DATABASE.lock().unwrap();
-    
+    println!("Handler got payload: {:?}\nto register", payload);
+
     if let Some(_) = db.get_user_by_username(&payload.username) {
         return Err((StatusCode::BAD_REQUEST, "Username already taken".to_string()));
     }

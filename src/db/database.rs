@@ -51,7 +51,7 @@ impl Database {
             _ => None,
         }
     }
-    pub fn get_event_by_name_id(&self, name: &str, user_id:i32) -> Option<Vec<&Event>> {
+    pub fn get_event_by_name_id(&self, name: &str, user_id:i32) -> Vec<&Event> {
         let mut events = Vec::new();
         for cell in self.storage.values() {
             match cell {
@@ -59,11 +59,7 @@ impl Database {
                 _ => (),
             }
         }
-        if events.is_empty() {
-            None
-        } else {
-            Some(events)
-        }
+        events
     }
 
     pub fn delete_event_by_id(&mut self, id: i32) -> Result<Event, ()> {
