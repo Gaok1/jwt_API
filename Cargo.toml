@@ -4,13 +4,12 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-jsonwebtoken = "9.3" #jwt serialize and deserealize lib
-axum = { version = "0.7.9" }            # web request framework
-serde = { version = "1.0", features = ["derive"] } #json serialize and deserialize
-serde_json = "1.0"         #json serialize and deserialize
-tokio = { version = "1.0", features = ["rt-multi-thread", "macros"] } #runtime async lib
-uuid = "1.4"               # easy id generator
+jsonwebtoken = "9.3"
+axum = { version = "0.6", features = ["debug-handler"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tokio = { version = "1.0", features = ["rt-multi-thread", "macros"] }
+uuid = "1.4"
 chrono = "0.4"
-tower-http = { version = "0.6", features = ["cors"] } 
+tower-http = { version = "0.6", features = ["cors"] }
 axum-extra = { version = "0.9", features = ["typed-header"] }
-headers = "0.3"

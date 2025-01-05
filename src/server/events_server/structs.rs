@@ -14,7 +14,7 @@ impl ConsultEventRequest {
 }
 
 #[derive(Serialize, Deserialize, Debug)]
-pub struct WholeEventRequest {//validar com o token
+pub struct WholeEventRequest {
     event_name: String,
     description: String,
     event_type: EventType,
@@ -37,7 +37,7 @@ impl WholeEventRequest {
 }
 
 #[derive(Serialize, Deserialize, Debug)]
-pub struct DeleteEventRequest { //validar com o token
+pub struct DeleteEventRequest {
     event_id: String,
 }
 
